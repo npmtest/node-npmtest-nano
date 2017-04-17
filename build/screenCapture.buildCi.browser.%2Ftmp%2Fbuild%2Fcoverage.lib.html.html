@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-nano/nano/lib/nano.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-nano/node_modules/nano/lib/nano.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-nano">npmtest-nano (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-nano/nano/lib/nano.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-nano/node_modules/nano/lib/nano.js</span></h1>
     <h2>
         
         Statements: <span class="metric">16.61% <small>(51 / 307)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-nano/nano/lib/</a> &#187; nano.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-nano/node_modules/nano/lib/</a> » nano.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1825,222 +1823,222 @@ var logger = require('./logger');
 &nbsp;
 var nano;
 &nbsp;
-module.exports = exports = nano = <span class="fstat-no" title="function not covered" >function dbScope(cfg) {</span>
-<span class="cstat-no" title="statement not covered" >  var serverScope = {};</span>
+module.exports = exports = nano = <span class="fstat-no" title="function not covered">function dbScope(cfg) {</span>
+<span class="cstat-no" title="statement not covered">  var serverScope = {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (typeof cfg === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >    cfg = {url: cfg};</span>
+<span class="cstat-no" title="statement not covered">  if (typeof cfg === 'string') {</span>
+<span class="cstat-no" title="statement not covered">    cfg = {url: cfg};</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  assert.equal(typeof cfg, 'object',</span>
+<span class="cstat-no" title="statement not covered">  assert.equal(typeof cfg, 'object',</span>
     'You must specify the endpoint url when invoking this module');
-<span class="cstat-no" title="statement not covered" >  assert.ok(/^https?:/.test(cfg.url), 'url is not valid');</span>
+<span class="cstat-no" title="statement not covered">  assert.ok(/^https?:/.test(cfg.url), 'url is not valid');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  cfg = _.clone(cfg);</span>
+<span class="cstat-no" title="statement not covered">  cfg = _.clone(cfg);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  serverScope.config = cfg;</span>
-<span class="cstat-no" title="statement not covered" >  cfg.requestDefaults = cfg.requestDefaults || {jar: false};</span>
+<span class="cstat-no" title="statement not covered">  serverScope.config = cfg;</span>
+<span class="cstat-no" title="statement not covered">  cfg.requestDefaults = cfg.requestDefaults || {jar: false};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var httpAgent = (typeof cfg.request === 'function') ? cfg.request :</span>
+<span class="cstat-no" title="statement not covered">  var httpAgent = (typeof cfg.request === 'function') ? cfg.request :</span>
     request.defaults(cfg.requestDefaults);
-<span class="cstat-no" title="statement not covered" >  var followAgent = (typeof cfg.follow === 'function') ? cfg.follow : follow;</span>
-<span class="cstat-no" title="statement not covered" >  var log = typeof cfg.log === 'function' ? cfg.log : logger(cfg);</span>
-<span class="cstat-no" title="statement not covered" >  var parseUrl = 'parseUrl' in cfg ? cfg.parseUrl : true;</span>
+<span class="cstat-no" title="statement not covered">  var followAgent = (typeof cfg.follow === 'function') ? cfg.follow : follow;</span>
+<span class="cstat-no" title="statement not covered">  var log = typeof cfg.log === 'function' ? cfg.log : logger(cfg);</span>
+<span class="cstat-no" title="statement not covered">  var parseUrl = 'parseUrl' in cfg ? cfg.parseUrl : true;</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function maybeExtractDatabaseComponent() {</span>
-<span class="cstat-no" title="statement not covered" >    if (!parseUrl) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="fstat-no" title="function not covered">  function maybeExtractDatabaseComponent() {</span>
+<span class="cstat-no" title="statement not covered">    if (!parseUrl) {</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var path = u.parse(cfg.url);</span>
-<span class="cstat-no" title="statement not covered" >    var pathArray = path.pathname.split('/').filter(<span class="fstat-no" title="function not covered" >function(e) {</span> <span class="cstat-no" title="statement not covered" >return e; </span>});</span>
-<span class="cstat-no" title="statement not covered" >    var db = pathArray.pop();</span>
-<span class="cstat-no" title="statement not covered" >    var rootPath = path.pathname.replace(/\/?$/, '/..');</span>
+<span class="cstat-no" title="statement not covered">    var path = u.parse(cfg.url);</span>
+<span class="cstat-no" title="statement not covered">    var pathArray = path.pathname.split('/').filter(<span class="fstat-no" title="function not covered">function(e) {</span> <span class="cstat-no" title="statement not covered">return e; </span>});</span>
+<span class="cstat-no" title="statement not covered">    var db = pathArray.pop();</span>
+<span class="cstat-no" title="statement not covered">    var rootPath = path.pathname.replace(/\/?$/, '/..');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (db) {</span>
-<span class="cstat-no" title="statement not covered" >      cfg.url = urlResolveFix(cfg.url, rootPath).replace(/\/?$/, '');</span>
-<span class="cstat-no" title="statement not covered" >      return db;</span>
+<span class="cstat-no" title="statement not covered">    if (db) {</span>
+<span class="cstat-no" title="statement not covered">      cfg.url = urlResolveFix(cfg.url, rootPath).replace(/\/?$/, '');</span>
+<span class="cstat-no" title="statement not covered">      return db;</span>
     }
   }
   
-<span class="fstat-no" title="function not covered" >  function scrub(str) {</span>
-<span class="cstat-no" title="statement not covered" >    if (str) {</span>
-<span class="cstat-no" title="statement not covered" >      str = str.replace(/\/\/(.*)@/,"//XXXXXX:XXXXXX@");</span>
+<span class="fstat-no" title="function not covered">  function scrub(str) {</span>
+<span class="cstat-no" title="statement not covered">    if (str) {</span>
+<span class="cstat-no" title="statement not covered">      str = str.replace(/\/\/(.*)@/,"//XXXXXX:XXXXXX@");</span>
     }
-<span class="cstat-no" title="statement not covered" >    return str;</span>
+<span class="cstat-no" title="statement not covered">    return str;</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function relax(opts, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof opts === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      callback = opts;</span>
-<span class="cstat-no" title="statement not covered" >      opts = {path: ''};</span>
+<span class="fstat-no" title="function not covered">  function relax(opts, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof opts === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      callback = opts;</span>
+<span class="cstat-no" title="statement not covered">      opts = {path: ''};</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (typeof opts === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >      opts = {path: opts};</span>
+<span class="cstat-no" title="statement not covered">    if (typeof opts === 'string') {</span>
+<span class="cstat-no" title="statement not covered">      opts = {path: opts};</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!opts) {</span>
-<span class="cstat-no" title="statement not covered" >      opts = {path: ''};</span>
-<span class="cstat-no" title="statement not covered" >      callback = null;</span>
+<span class="cstat-no" title="statement not covered">    if (!opts) {</span>
+<span class="cstat-no" title="statement not covered">      opts = {path: ''};</span>
+<span class="cstat-no" title="statement not covered">      callback = null;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var qs = _.extend({}, opts.qs);</span>
+<span class="cstat-no" title="statement not covered">    var qs = _.extend({}, opts.qs);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var headers = {</span>
+<span class="cstat-no" title="statement not covered">    var headers = {</span>
       'content-type': 'application/json',
       accept: 'application/json'
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var req = {</span>
+<span class="cstat-no" title="statement not covered">    var req = {</span>
       method: (opts.method || 'GET'),
       headers: headers,
       uri: cfg.url
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var parsed;</span>
-<span class="cstat-no" title="statement not covered" >    var rh;</span>
+<span class="cstat-no" title="statement not covered">    var parsed;</span>
+<span class="cstat-no" title="statement not covered">    var rh;</span>
 &nbsp;
     // https://github.com/mikeal/request#requestjar
-<span class="cstat-no" title="statement not covered" >    var isJar = opts.jar || cfg.jar;</span>
+<span class="cstat-no" title="statement not covered">    var isJar = opts.jar || cfg.jar;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (isJar) {</span>
-<span class="cstat-no" title="statement not covered" >      req.jar = isJar;</span>
+<span class="cstat-no" title="statement not covered">    if (isJar) {</span>
+<span class="cstat-no" title="statement not covered">      req.jar = isJar;</span>
     }
 &nbsp;
     // http://wiki.apache.org/couchdb/HTTP_database_API#Naming_and_Addressing
-<span class="cstat-no" title="statement not covered" >    if (opts.db) {</span>
-<span class="cstat-no" title="statement not covered" >      req.uri = urlResolveFix(req.uri, encodeURIComponent(opts.db));</span>
+<span class="cstat-no" title="statement not covered">    if (opts.db) {</span>
+<span class="cstat-no" title="statement not covered">      req.uri = urlResolveFix(req.uri, encodeURIComponent(opts.db));</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (opts.multipart) {</span>
-<span class="cstat-no" title="statement not covered" >      req.multipart = opts.multipart;</span>
+<span class="cstat-no" title="statement not covered">    if (opts.multipart) {</span>
+<span class="cstat-no" title="statement not covered">      req.multipart = opts.multipart;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    req.headers = _.extend(req.headers, opts.headers, cfg.defaultHeaders);</span>
+<span class="cstat-no" title="statement not covered">    req.headers = _.extend(req.headers, opts.headers, cfg.defaultHeaders);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (opts.path) {</span>
-<span class="cstat-no" title="statement not covered" >      req.uri += '/' + opts.path;</span>
-    } else <span class="cstat-no" title="statement not covered" >if (opts.doc) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!/^_design/.test(opts.doc)) {</span>
+<span class="cstat-no" title="statement not covered">    if (opts.path) {</span>
+<span class="cstat-no" title="statement not covered">      req.uri += '/' + opts.path;</span>
+    } else <span class="cstat-no" title="statement not covered">if (opts.doc) {</span>
+<span class="cstat-no" title="statement not covered">      if (!/^_design/.test(opts.doc)) {</span>
         // http://wiki.apache.org/couchdb/HTTP_Document_API#Naming.2FAddressing
-<span class="cstat-no" title="statement not covered" >        req.uri += '/' + encodeURIComponent(opts.doc);</span>
+<span class="cstat-no" title="statement not covered">        req.uri += '/' + encodeURIComponent(opts.doc);</span>
       } else {
         // http://wiki.apache.org/couchdb/HTTP_Document_API#Document_IDs
-<span class="cstat-no" title="statement not covered" >        req.uri += '/' + opts.doc;</span>
+<span class="cstat-no" title="statement not covered">        req.uri += '/' + opts.doc;</span>
       }
 &nbsp;
       // http://wiki.apache.org/couchdb/HTTP_Document_API#Attachments
-<span class="cstat-no" title="statement not covered" >      if (opts.att) {</span>
-<span class="cstat-no" title="statement not covered" >        req.uri += '/' + opts.att;</span>
+<span class="cstat-no" title="statement not covered">      if (opts.att) {</span>
+<span class="cstat-no" title="statement not covered">        req.uri += '/' + opts.att;</span>
       }
     }
 &nbsp;
     // prevent bugs where people set encoding when piping
-<span class="cstat-no" title="statement not covered" >    if (opts.encoding !== undefined &amp;&amp; callback) {</span>
-<span class="cstat-no" title="statement not covered" >      req.encoding = opts.encoding;</span>
-<span class="cstat-no" title="statement not covered" >      delete req.headers['content-type'];</span>
-<span class="cstat-no" title="statement not covered" >      delete req.headers.accept;</span>
+<span class="cstat-no" title="statement not covered">    if (opts.encoding !== undefined &amp;&amp; callback) {</span>
+<span class="cstat-no" title="statement not covered">      req.encoding = opts.encoding;</span>
+<span class="cstat-no" title="statement not covered">      delete req.headers['content-type'];</span>
+<span class="cstat-no" title="statement not covered">      delete req.headers.accept;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (opts.contentType) {</span>
-<span class="cstat-no" title="statement not covered" >      req.headers['content-type'] = opts.contentType;</span>
-<span class="cstat-no" title="statement not covered" >      delete req.headers.accept;</span>
+<span class="cstat-no" title="statement not covered">    if (opts.contentType) {</span>
+<span class="cstat-no" title="statement not covered">      req.headers['content-type'] = opts.contentType;</span>
+<span class="cstat-no" title="statement not covered">      delete req.headers.accept;</span>
     }
 &nbsp;
     // http://guide.couchdb.org/draft/security.html#cookies
-<span class="cstat-no" title="statement not covered" >    if (cfg.cookie) {</span>
-<span class="cstat-no" title="statement not covered" >      req.headers['X-CouchDB-WWW-Authenticate'] = 'Cookie';</span>
-<span class="cstat-no" title="statement not covered" >      req.headers.cookie = cfg.cookie;</span>
+<span class="cstat-no" title="statement not covered">    if (cfg.cookie) {</span>
+<span class="cstat-no" title="statement not covered">      req.headers['X-CouchDB-WWW-Authenticate'] = 'Cookie';</span>
+<span class="cstat-no" title="statement not covered">      req.headers.cookie = cfg.cookie;</span>
     }
 &nbsp;
     // http://wiki.apache.org/couchdb/HTTP_view_API#Querying_Options
-<span class="cstat-no" title="statement not covered" >    if (typeof opts.qs === 'object' &amp;&amp; !_.isEmpty(opts.qs)) {</span>
-<span class="cstat-no" title="statement not covered" >      ['startkey', 'endkey', 'key', 'keys'].forEach(<span class="fstat-no" title="function not covered" >function(key) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (key in opts.qs) {</span>
-<span class="cstat-no" title="statement not covered" >          qs[key] = JSON.stringify(opts.qs[key]);</span>
+<span class="cstat-no" title="statement not covered">    if (typeof opts.qs === 'object' &amp;&amp; !_.isEmpty(opts.qs)) {</span>
+<span class="cstat-no" title="statement not covered">      ['startkey', 'endkey', 'key', 'keys'].forEach(<span class="fstat-no" title="function not covered">function(key) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (key in opts.qs) {</span>
+<span class="cstat-no" title="statement not covered">          qs[key] = JSON.stringify(opts.qs[key]);</span>
         }
       });
-<span class="cstat-no" title="statement not covered" >      req.qs = qs;</span>
+<span class="cstat-no" title="statement not covered">      req.qs = qs;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (opts.body) {</span>
-<span class="cstat-no" title="statement not covered" >      if (Buffer.isBuffer(opts.body) || opts.dontStringify) {</span>
-<span class="cstat-no" title="statement not covered" >        req.body = opts.body;</span>
+<span class="cstat-no" title="statement not covered">    if (opts.body) {</span>
+<span class="cstat-no" title="statement not covered">      if (Buffer.isBuffer(opts.body) || opts.dontStringify) {</span>
+<span class="cstat-no" title="statement not covered">        req.body = opts.body;</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        req.body = JSON.stringify(opts.body, <span class="fstat-no" title="function not covered" >function(key, value) {</span></span>
+<span class="cstat-no" title="statement not covered">        req.body = JSON.stringify(opts.body, <span class="fstat-no" title="function not covered">function(key, value) {</span></span>
           // don't encode functions
-<span class="cstat-no" title="statement not covered" >          if (typeof(value) === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >            return value.toString();</span>
+<span class="cstat-no" title="statement not covered">          if (typeof(value) === 'function') {</span>
+<span class="cstat-no" title="statement not covered">            return value.toString();</span>
           } else {
-<span class="cstat-no" title="statement not covered" >            return value;</span>
+<span class="cstat-no" title="statement not covered">            return value;</span>
           }
         });
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (opts.form) {</span>
-<span class="cstat-no" title="statement not covered" >      req.headers['content-type'] =</span>
+<span class="cstat-no" title="statement not covered">    if (opts.form) {</span>
+<span class="cstat-no" title="statement not covered">      req.headers['content-type'] =</span>
         'application/x-www-form-urlencoded; charset=utf-8';
-<span class="cstat-no" title="statement not covered" >      req.body = querystring.stringify(opts.form).toString('utf8');</span>
+<span class="cstat-no" title="statement not covered">      req.body = querystring.stringify(opts.form).toString('utf8');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    log(req);</span>
+<span class="cstat-no" title="statement not covered">    log(req);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return httpAgent(req);</span>
+<span class="cstat-no" title="statement not covered">    if (!callback) {</span>
+<span class="cstat-no" title="statement not covered">      return httpAgent(req);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return httpAgent(req, <span class="fstat-no" title="function not covered" >function(e, h, b) {</span></span>
-<span class="cstat-no" title="statement not covered" >      rh = h &amp;&amp; h.headers || {};</span>
-<span class="cstat-no" title="statement not covered" >      rh.statusCode = h &amp;&amp; h.statusCode || 500;</span>
-<span class="cstat-no" title="statement not covered" >      rh.uri = req.uri;</span>
+<span class="cstat-no" title="statement not covered">    return httpAgent(req, <span class="fstat-no" title="function not covered">function(e, h, b) {</span></span>
+<span class="cstat-no" title="statement not covered">      rh = h &amp;&amp; h.headers || {};</span>
+<span class="cstat-no" title="statement not covered">      rh.statusCode = h &amp;&amp; h.statusCode || 500;</span>
+<span class="cstat-no" title="statement not covered">      rh.uri = req.uri;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (e) {</span>
-<span class="cstat-no" title="statement not covered" >        log({err: 'socket', body: b, headers: rh});</span>
-<span class="cstat-no" title="statement not covered" >        return callback(errs.merge(e, {</span>
+<span class="cstat-no" title="statement not covered">      if (e) {</span>
+<span class="cstat-no" title="statement not covered">        log({err: 'socket', body: b, headers: rh});</span>
+<span class="cstat-no" title="statement not covered">        return callback(errs.merge(e, {</span>
           message: 'error happened in your connection',
           scope: 'socket',
           errid: 'request'
         }));
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      delete rh.server;</span>
-<span class="cstat-no" title="statement not covered" >      delete rh['content-length'];</span>
+<span class="cstat-no" title="statement not covered">      delete rh.server;</span>
+<span class="cstat-no" title="statement not covered">      delete rh['content-length'];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (opts.dontParse) {</span>
-<span class="cstat-no" title="statement not covered" >        parsed = b;</span>
+<span class="cstat-no" title="statement not covered">      if (opts.dontParse) {</span>
+<span class="cstat-no" title="statement not covered">        parsed = b;</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        try { <span class="cstat-no" title="statement not covered" >parsed = JSON.parse(b); </span>} catch (err) { <span class="cstat-no" title="statement not covered" >parsed = b; </span>}</span>
+<span class="cstat-no" title="statement not covered">        try { <span class="cstat-no" title="statement not covered">parsed = JSON.parse(b); </span>} catch (err) { <span class="cstat-no" title="statement not covered">parsed = b; </span>}</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (rh.statusCode &gt;= 200 &amp;&amp; rh.statusCode &lt; 400) {</span>
-<span class="cstat-no" title="statement not covered" >        log({err: null, body: parsed, headers: rh});</span>
-<span class="cstat-no" title="statement not covered" >        return callback(null, parsed, rh);</span>
+<span class="cstat-no" title="statement not covered">      if (rh.statusCode &gt;= 200 &amp;&amp; rh.statusCode &lt; 400) {</span>
+<span class="cstat-no" title="statement not covered">        log({err: null, body: parsed, headers: rh});</span>
+<span class="cstat-no" title="statement not covered">        return callback(null, parsed, rh);</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      log({err: 'couch', body: parsed, headers: rh});</span>
+<span class="cstat-no" title="statement not covered">      log({err: 'couch', body: parsed, headers: rh});</span>
 &nbsp;
       // cloudant stacktrace
-<span class="cstat-no" title="statement not covered" >      if (typeof parsed === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >        parsed = {message: parsed};</span>
+<span class="cstat-no" title="statement not covered">      if (typeof parsed === 'string') {</span>
+<span class="cstat-no" title="statement not covered">        parsed = {message: parsed};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!parsed.message &amp;&amp; (parsed.reason || parsed.error)) {</span>
-<span class="cstat-no" title="statement not covered" >        parsed.message = (parsed.reason || parsed.error);</span>
+<span class="cstat-no" title="statement not covered">      if (!parsed.message &amp;&amp; (parsed.reason || parsed.error)) {</span>
+<span class="cstat-no" title="statement not covered">        parsed.message = (parsed.reason || parsed.error);</span>
       }
 &nbsp;
       // fix cloudant issues where they give an erlang stacktrace as js
-<span class="cstat-no" title="statement not covered" >      delete parsed.stack;</span>
+<span class="cstat-no" title="statement not covered">      delete parsed.stack;</span>
 &nbsp;
       // scrub credentials
-<span class="cstat-no" title="statement not covered" >      req.uri = scrub(req.uri);</span>
-<span class="cstat-no" title="statement not covered" >      rh.uri = scrub(rh.uri);</span>
-<span class="cstat-no" title="statement not covered" >      if (req.headers.cookie) {</span>
-<span class="cstat-no" title="statement not covered" >        req.headers.cookie = "XXXXXXX";</span>
+<span class="cstat-no" title="statement not covered">      req.uri = scrub(req.uri);</span>
+<span class="cstat-no" title="statement not covered">      rh.uri = scrub(rh.uri);</span>
+<span class="cstat-no" title="statement not covered">      if (req.headers.cookie) {</span>
+<span class="cstat-no" title="statement not covered">        req.headers.cookie = "XXXXXXX";</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      callback(errs.merge({</span>
+<span class="cstat-no" title="statement not covered">      callback(errs.merge({</span>
         message: 'couch returned ' + rh.statusCode,
         scope: 'couch',
         statusCode: rh.statusCode,
@@ -2052,8 +2050,8 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/server/authn.html#cookie-authentication
-<span class="fstat-no" title="function not covered" >  function auth(username, password, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return relax({</span>
+<span class="fstat-no" title="function not covered">  function auth(username, password, callback) {</span>
+<span class="cstat-no" title="statement not covered">    return relax({</span>
       method: 'POST',
       db: '_session',
       form: {
@@ -2064,53 +2062,53 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/server/authn.html#post--_session
-<span class="fstat-no" title="function not covered" >  function session(callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return relax({db: '_session'}, callback);</span>
+<span class="fstat-no" title="function not covered">  function session(callback) {</span>
+<span class="cstat-no" title="statement not covered">    return relax({db: '_session'}, callback);</span>
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/server/common.html#get--_db_updates
-<span class="fstat-no" title="function not covered" >  function updates(qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >      qs = {};</span>
+<span class="fstat-no" title="function not covered">  function updates(qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      callback = qs;</span>
+<span class="cstat-no" title="statement not covered">      qs = {};</span>
     }
-<span class="cstat-no" title="statement not covered" >    return relax({</span>
+<span class="cstat-no" title="statement not covered">    return relax({</span>
       db: '_db_updates',
       qs: qs
     }, callback);
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function followUpdates(qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return followDb('_db_updates', qs, callback);</span>
+<span class="fstat-no" title="function not covered">  function followUpdates(qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">    return followDb('_db_updates', qs, callback);</span>
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/database/common.html#put--db
-<span class="fstat-no" title="function not covered" >  function createDb(dbName, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return relax({db: dbName, method: 'PUT'}, callback);</span>
+<span class="fstat-no" title="function not covered">  function createDb(dbName, callback) {</span>
+<span class="cstat-no" title="statement not covered">    return relax({db: dbName, method: 'PUT'}, callback);</span>
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/database/common.html#delete--db
-<span class="fstat-no" title="function not covered" >  function destroyDb(dbName, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return relax({db: dbName, method: 'DELETE'}, callback);</span>
+<span class="fstat-no" title="function not covered">  function destroyDb(dbName, callback) {</span>
+<span class="cstat-no" title="statement not covered">    return relax({db: dbName, method: 'DELETE'}, callback);</span>
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/database/common.html#get--db
-<span class="fstat-no" title="function not covered" >  function getDb(dbName, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return relax({db: dbName}, callback);</span>
+<span class="fstat-no" title="function not covered">  function getDb(dbName, callback) {</span>
+<span class="cstat-no" title="statement not covered">    return relax({db: dbName}, callback);</span>
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/server/common.html#get--_all_dbs
-<span class="fstat-no" title="function not covered" >  function listDbs(callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return relax({db: '_all_dbs'}, callback);</span>
+<span class="fstat-no" title="function not covered">  function listDbs(callback) {</span>
+<span class="cstat-no" title="statement not covered">    return relax({db: '_all_dbs'}, callback);</span>
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/database/compact.html#post--db-_compact
-<span class="fstat-no" title="function not covered" >  function compactDb(dbName, ddoc, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof ddoc === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      callback = ddoc;</span>
-<span class="cstat-no" title="statement not covered" >      ddoc = null;</span>
+<span class="fstat-no" title="function not covered">  function compactDb(dbName, ddoc, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof ddoc === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      callback = ddoc;</span>
+<span class="cstat-no" title="statement not covered">      ddoc = null;</span>
     }
-<span class="cstat-no" title="statement not covered" >    return relax({</span>
+<span class="cstat-no" title="statement not covered">    return relax({</span>
       db: dbName,
       doc: '_compact',
       att: ddoc,
@@ -2119,83 +2117,83 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/database/changes.html#get--db-_changes
-<span class="fstat-no" title="function not covered" >  function changesDb(dbName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >      qs = {};</span>
+<span class="fstat-no" title="function not covered">  function changesDb(dbName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      callback = qs;</span>
+<span class="cstat-no" title="statement not covered">      qs = {};</span>
     }
-<span class="cstat-no" title="statement not covered" >    return relax({db: dbName, path: '_changes', qs: qs}, callback);</span>
+<span class="cstat-no" title="statement not covered">    return relax({db: dbName, path: '_changes', qs: qs}, callback);</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function followDb(dbName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >      qs = {};</span>
+<span class="fstat-no" title="function not covered">  function followDb(dbName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      callback = qs;</span>
+<span class="cstat-no" title="statement not covered">      qs = {};</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    qs.db = urlResolveFix(cfg.url, encodeURIComponent(dbName));</span>
+<span class="cstat-no" title="statement not covered">    qs.db = urlResolveFix(cfg.url, encodeURIComponent(dbName));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (typeof callback === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      return followAgent(qs, callback);</span>
+<span class="cstat-no" title="statement not covered">    if (typeof callback === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      return followAgent(qs, callback);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      return new followAgent.Feed(qs);</span>
+<span class="cstat-no" title="statement not covered">      return new followAgent.Feed(qs);</span>
     }
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function _serializeAsUrl(db) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof db === 'object' &amp;&amp; db.config &amp;&amp; db.config.url &amp;&amp; db.config.db) {</span>
-<span class="cstat-no" title="statement not covered" >      return urlResolveFix(db.config.url, encodeURIComponent(db.config.db));</span>
+<span class="fstat-no" title="function not covered">  function _serializeAsUrl(db) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof db === 'object' &amp;&amp; db.config &amp;&amp; db.config.url &amp;&amp; db.config.db) {</span>
+<span class="cstat-no" title="statement not covered">      return urlResolveFix(db.config.url, encodeURIComponent(db.config.db));</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      return db;</span>
+<span class="cstat-no" title="statement not covered">      return db;</span>
     }
   }
 &nbsp;
   // http://docs.couchdb.org/en/latest/api/server/common.html#post--_replicate
-<span class="fstat-no" title="function not covered" >  function replicateDb(source, target, opts, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof opts === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      callback = opts;</span>
-<span class="cstat-no" title="statement not covered" >      opts = {};</span>
+<span class="fstat-no" title="function not covered">  function replicateDb(source, target, opts, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof opts === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      callback = opts;</span>
+<span class="cstat-no" title="statement not covered">      opts = {};</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    opts.source = _serializeAsUrl(source);</span>
-<span class="cstat-no" title="statement not covered" >    opts.target = _serializeAsUrl(target);</span>
+<span class="cstat-no" title="statement not covered">    opts.source = _serializeAsUrl(source);</span>
+<span class="cstat-no" title="statement not covered">    opts.target = _serializeAsUrl(target);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return relax({db: '_replicate', body: opts, method: 'POST'}, callback);</span>
+<span class="cstat-no" title="statement not covered">    return relax({db: '_replicate', body: opts, method: 'POST'}, callback);</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function docModule(dbName) {</span>
-<span class="cstat-no" title="statement not covered" >    var docScope = {};</span>
-<span class="cstat-no" title="statement not covered" >    dbName = decodeURIComponent(dbName);</span>
+<span class="fstat-no" title="function not covered">  function docModule(dbName) {</span>
+<span class="cstat-no" title="statement not covered">    var docScope = {};</span>
+<span class="cstat-no" title="statement not covered">    dbName = decodeURIComponent(dbName);</span>
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/document/common.html#put--db-docid
     // http://docs.couchdb.org/en/latest/api/database/common.html#post--db
-<span class="fstat-no" title="function not covered" >    function insertDoc(doc, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      var opts = {db: dbName, body: doc, method: 'POST'};</span>
+<span class="fstat-no" title="function not covered">    function insertDoc(doc, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      var opts = {db: dbName, body: doc, method: 'POST'};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >        qs = {docName: qs};</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'string') {</span>
+<span class="cstat-no" title="statement not covered">        qs = {docName: qs};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (qs) {</span>
-<span class="cstat-no" title="statement not covered" >        if (qs.docName) {</span>
-<span class="cstat-no" title="statement not covered" >          opts.doc = qs.docName;</span>
-<span class="cstat-no" title="statement not covered" >          opts.method = 'PUT';</span>
-<span class="cstat-no" title="statement not covered" >          delete qs.docName;</span>
+<span class="cstat-no" title="statement not covered">      if (qs) {</span>
+<span class="cstat-no" title="statement not covered">        if (qs.docName) {</span>
+<span class="cstat-no" title="statement not covered">          opts.doc = qs.docName;</span>
+<span class="cstat-no" title="statement not covered">          opts.method = 'PUT';</span>
+<span class="cstat-no" title="statement not covered">          delete qs.docName;</span>
         }
-<span class="cstat-no" title="statement not covered" >        opts.qs = qs;</span>
+<span class="cstat-no" title="statement not covered">        opts.qs = qs;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax(opts, callback);</span>
+<span class="cstat-no" title="statement not covered">      return relax(opts, callback);</span>
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/document/common.html#delete--db-docid
-<span class="fstat-no" title="function not covered" >    function destroyDoc(docName, rev, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="fstat-no" title="function not covered">    function destroyDoc(docName, rev, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         doc: docName,
         method: 'DELETE',
@@ -2204,18 +2202,18 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/document/common.html#get--db-docid
-<span class="fstat-no" title="function not covered" >    function getDoc(docName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function getDoc(docName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({db: dbName, doc: docName, qs: qs}, callback);</span>
+<span class="cstat-no" title="statement not covered">      return relax({db: dbName, doc: docName, qs: qs}, callback);</span>
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/document/common.html#head--db-docid
-<span class="fstat-no" title="function not covered" >    function headDoc(docName, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="fstat-no" title="function not covered">    function headDoc(docName, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         doc: docName,
         method: 'HEAD',
@@ -2224,53 +2222,53 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/document/common.html#copy--db-docid
-<span class="fstat-no" title="function not covered" >    function copyDoc(docSrc, docDest, opts, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof opts === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = opts;</span>
-<span class="cstat-no" title="statement not covered" >        opts = {};</span>
+<span class="fstat-no" title="function not covered">    function copyDoc(docSrc, docDest, opts, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof opts === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = opts;</span>
+<span class="cstat-no" title="statement not covered">        opts = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var qs = {</span>
+<span class="cstat-no" title="statement not covered">      var qs = {</span>
         db: dbName,
         doc: docSrc,
         method: 'COPY',
         headers: {'Destination': docDest}
       };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (opts.overwrite) {</span>
-<span class="cstat-no" title="statement not covered" >        return headDoc(docDest, <span class="fstat-no" title="function not covered" >function(e, b, h) {</span></span>
-<span class="cstat-no" title="statement not covered" >          if (e &amp;&amp; e.statusCode !== 404) {</span>
-<span class="cstat-no" title="statement not covered" >            return callback(e);</span>
+<span class="cstat-no" title="statement not covered">      if (opts.overwrite) {</span>
+<span class="cstat-no" title="statement not covered">        return headDoc(docDest, <span class="fstat-no" title="function not covered">function(e, b, h) {</span></span>
+<span class="cstat-no" title="statement not covered">          if (e &amp;&amp; e.statusCode !== 404) {</span>
+<span class="cstat-no" title="statement not covered">            return callback(e);</span>
           }
-<span class="cstat-no" title="statement not covered" >          qs.headers.Destination += '?rev=' +</span>
+<span class="cstat-no" title="statement not covered">          qs.headers.Destination += '?rev=' +</span>
             h.etag.substring(1, h.etag.length - 1);
-<span class="cstat-no" title="statement not covered" >          return relax(qs, callback);</span>
+<span class="cstat-no" title="statement not covered">          return relax(qs, callback);</span>
         });
       } else {
-<span class="cstat-no" title="statement not covered" >        return relax(qs, callback);</span>
+<span class="cstat-no" title="statement not covered">        return relax(qs, callback);</span>
       }
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/database/bulk-api.html#get--db-_all_docs
-<span class="fstat-no" title="function not covered" >    function listDoc(qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function listDoc(qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({db: dbName, path: '_all_docs', qs: qs}, callback);</span>
+<span class="cstat-no" title="statement not covered">      return relax({db: dbName, path: '_all_docs', qs: qs}, callback);</span>
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/database/bulk-api.html#post--db-_all_docs
-<span class="fstat-no" title="function not covered" >    function fetchDocs(docNames, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function fetchDocs(docNames, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      qs['include_docs'] = true;</span>
+<span class="cstat-no" title="statement not covered">      qs['include_docs'] = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         path: '_all_docs',
         method: 'POST',
@@ -2279,12 +2277,12 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
       }, callback);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function fetchRevs(docNames, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function fetchRevs(docNames, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         path: '_all_docs',
         method: 'POST',
@@ -2293,27 +2291,27 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
       }, callback);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function view(ddoc, viewName, meta, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function view(ddoc, viewName, meta, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var viewPath = '_design/' + ddoc + '/_' + meta.type + '/'  + viewName;</span>
+<span class="cstat-no" title="statement not covered">      var viewPath = '_design/' + ddoc + '/_' + meta.type + '/'  + viewName;</span>
 &nbsp;
       // Several search parameters must be JSON-encoded; but since this is an
       // object API, several parameters need JSON endoding.
-<span class="cstat-no" title="statement not covered" >      var paramsToEncode = ['counts', 'drilldown', 'group_sort', 'ranges', 'sort'];</span>
-<span class="cstat-no" title="statement not covered" >      paramsToEncode.forEach(<span class="fstat-no" title="function not covered" >function(param) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (param in qs) {</span>
-<span class="cstat-no" title="statement not covered" >          qs[param] = JSON.stringify(qs[param]);</span>
+<span class="cstat-no" title="statement not covered">      var paramsToEncode = ['counts', 'drilldown', 'group_sort', 'ranges', 'sort'];</span>
+<span class="cstat-no" title="statement not covered">      paramsToEncode.forEach(<span class="fstat-no" title="function not covered">function(param) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (param in qs) {</span>
+<span class="cstat-no" title="statement not covered">          qs[param] = JSON.stringify(qs[param]);</span>
         }
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (qs &amp;&amp; qs.keys) {</span>
-<span class="cstat-no" title="statement not covered" >        var body = {keys: qs.keys};</span>
-<span class="cstat-no" title="statement not covered" >        delete qs.keys;</span>
-<span class="cstat-no" title="statement not covered" >        return relax({</span>
+<span class="cstat-no" title="statement not covered">      if (qs &amp;&amp; qs.keys) {</span>
+<span class="cstat-no" title="statement not covered">        var body = {keys: qs.keys};</span>
+<span class="cstat-no" title="statement not covered">        delete qs.keys;</span>
+<span class="cstat-no" title="statement not covered">        return relax({</span>
           db: dbName,
           path: viewPath,
           method: 'POST',
@@ -2321,64 +2319,64 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
           body: body
         }, callback);
       } else {
-<span class="cstat-no" title="statement not covered" >        var req = {</span>
+<span class="cstat-no" title="statement not covered">        var req = {</span>
           db: dbName,
           method: meta.method || 'GET',
           path: viewPath,
           qs: qs
         };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (meta.body) {</span>
-<span class="cstat-no" title="statement not covered" >          req.body = meta.body;</span>
+<span class="cstat-no" title="statement not covered">        if (meta.body) {</span>
+<span class="cstat-no" title="statement not covered">          req.body = meta.body;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return relax(req, callback);</span>
+<span class="cstat-no" title="statement not covered">        return relax(req, callback);</span>
       }
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/ddoc/views.html#post--db-_design-ddoc-_view-view
-<span class="fstat-no" title="function not covered" >    function viewDocs(ddoc, viewName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return view(ddoc, viewName, {type: 'view'}, qs, callback);</span>
+<span class="fstat-no" title="function not covered">    function viewDocs(ddoc, viewName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return view(ddoc, viewName, {type: 'view'}, qs, callback);</span>
     }
 &nbsp;
     // geocouch
-<span class="fstat-no" title="function not covered" >    function viewSpatial(ddoc, viewName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return view(ddoc, viewName, {type: 'spatial'}, qs, callback);</span>
+<span class="fstat-no" title="function not covered">    function viewSpatial(ddoc, viewName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return view(ddoc, viewName, {type: 'spatial'}, qs, callback);</span>
     }
 &nbsp;
     // cloudant
-<span class="fstat-no" title="function not covered" >    function viewSearch(ddoc, viewName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return view(ddoc, viewName, {type: 'search'}, qs, callback);</span>
+<span class="fstat-no" title="function not covered">    function viewSearch(ddoc, viewName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return view(ddoc, viewName, {type: 'search'}, qs, callback);</span>
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/ddoc/render.html#get--db-_design-ddoc-_show-func
-<span class="fstat-no" title="function not covered" >    function showDoc(ddoc, viewName, docName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return view(ddoc, viewName + '/' + docName, {type: 'show'}, qs, callback);</span>
+<span class="fstat-no" title="function not covered">    function showDoc(ddoc, viewName, docName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return view(ddoc, viewName + '/' + docName, {type: 'show'}, qs, callback);</span>
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/ddoc/render.html#put--db-_design-ddoc-_update-func-docid
-<span class="fstat-no" title="function not covered" >    function updateWithHandler(ddoc, viewName, docName, body, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return view(ddoc, viewName + '/' + encodeURIComponent(docName), {</span>
+<span class="fstat-no" title="function not covered">    function updateWithHandler(ddoc, viewName, docName, body, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return view(ddoc, viewName + '/' + encodeURIComponent(docName), {</span>
         type: 'update',
         method: 'PUT',
         body: body
       }, callback);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function viewWithList(ddoc, viewName, listName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return view(ddoc, listName + '/' + viewName, {</span>
+<span class="fstat-no" title="function not covered">    function viewWithList(ddoc, viewName, listName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return view(ddoc, listName + '/' + viewName, {</span>
         type: 'list'
       }, qs, callback);
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/database/bulk-api.html#post--db-_bulksDoc
-<span class="fstat-no" title="function not covered" >    function bulksDoc(docs, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function bulksDoc(docs, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         path: '_bulk_docs',
         body: docs,
@@ -2388,35 +2386,35 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
     }
 &nbsp;
     // http://docs.couchdb.org/en/latest/api/document/common.html#creating-multiple-attachments
-<span class="fstat-no" title="function not covered" >    function insertMultipart(doc, attachments, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >        qs = {docName: qs};</span>
+<span class="fstat-no" title="function not covered">    function insertMultipart(doc, attachments, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'string') {</span>
+<span class="cstat-no" title="statement not covered">        qs = {docName: qs};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var docName = qs.docName;</span>
-<span class="cstat-no" title="statement not covered" >      delete qs.docName;</span>
+<span class="cstat-no" title="statement not covered">      var docName = qs.docName;</span>
+<span class="cstat-no" title="statement not covered">      delete qs.docName;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      doc = _.extend({_attachments: {}}, doc);</span>
+<span class="cstat-no" title="statement not covered">      doc = _.extend({_attachments: {}}, doc);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var multipart = [];</span>
+<span class="cstat-no" title="statement not covered">      var multipart = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      attachments.forEach(<span class="fstat-no" title="function not covered" >function(att) {</span></span>
-<span class="cstat-no" title="statement not covered" >        doc._attachments[att.name] = {</span>
+<span class="cstat-no" title="statement not covered">      attachments.forEach(<span class="fstat-no" title="function not covered">function(att) {</span></span>
+<span class="cstat-no" title="statement not covered">        doc._attachments[att.name] = {</span>
           follows: true,
           length: Buffer.isBuffer(att.data) ?
             att.data.length : Buffer.byteLength(att.data),
           /* jscs:disable requireCamelCaseOrUpperCaseIdentifiers */
           'content_type': att.content_type
         };
-<span class="cstat-no" title="statement not covered" >        multipart.push({body: att.data});</span>
+<span class="cstat-no" title="statement not covered">        multipart.push({body: att.data});</span>
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      multipart.unshift({</span>
+<span class="cstat-no" title="statement not covered">      multipart.unshift({</span>
         'content-type': 'application/json',
         body: JSON.stringify(doc)
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         method: 'PUT',
         contentType: 'multipart/related',
@@ -2426,15 +2424,15 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
       }, callback);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function getMultipart(docName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function getMultipart(docName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      qs.attachments = true;</span>
+<span class="cstat-no" title="statement not covered">      qs.attachments = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         doc: docName,
         encoding: null,
@@ -2443,13 +2441,13 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
       }, callback);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function insertAtt(docName, attName, att, contentType, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function insertAtt(docName, attName, att, contentType, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         att: attName,
         method: 'PUT',
@@ -2461,13 +2459,13 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
       }, callback);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function getAtt(docName, attName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof qs === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = qs;</span>
-<span class="cstat-no" title="statement not covered" >        qs = {};</span>
+<span class="fstat-no" title="function not covered">    function getAtt(docName, attName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof qs === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = qs;</span>
+<span class="cstat-no" title="statement not covered">        qs = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         att: attName,
         doc: docName,
@@ -2477,8 +2475,8 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
       }, callback);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function destroyAtt(docName, attName, qs, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return relax({</span>
+<span class="fstat-no" title="function not covered">    function destroyAtt(docName, attName, qs, callback) {</span>
+<span class="cstat-no" title="statement not covered">      return relax({</span>
         db: dbName,
         att: attName,
         method: 'DELETE',
@@ -2488,21 +2486,21 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
     }
 &nbsp;
     // db level exports
-<span class="cstat-no" title="statement not covered" >    docScope = {</span>
-      info: <span class="fstat-no" title="function not covered" >function(cb) {</span>
-<span class="cstat-no" title="statement not covered" >        return getDb(dbName, cb);</span>
+<span class="cstat-no" title="statement not covered">    docScope = {</span>
+      info: <span class="fstat-no" title="function not covered">function(cb) {</span>
+<span class="cstat-no" title="statement not covered">        return getDb(dbName, cb);</span>
       },
-      replicate: <span class="fstat-no" title="function not covered" >function(target, opts, cb) {</span>
-<span class="cstat-no" title="statement not covered" >        return replicateDb(dbName, target, opts, cb);</span>
+      replicate: <span class="fstat-no" title="function not covered">function(target, opts, cb) {</span>
+<span class="cstat-no" title="statement not covered">        return replicateDb(dbName, target, opts, cb);</span>
       },
-      compact: <span class="fstat-no" title="function not covered" >function(cb) {</span>
-<span class="cstat-no" title="statement not covered" >        return compactDb(dbName, cb);</span>
+      compact: <span class="fstat-no" title="function not covered">function(cb) {</span>
+<span class="cstat-no" title="statement not covered">        return compactDb(dbName, cb);</span>
       },
-      changes: <span class="fstat-no" title="function not covered" >function(qs, cb) {</span>
-<span class="cstat-no" title="statement not covered" >        return changesDb(dbName, qs, cb);</span>
+      changes: <span class="fstat-no" title="function not covered">function(qs, cb) {</span>
+<span class="cstat-no" title="statement not covered">        return changesDb(dbName, qs, cb);</span>
       },
-      follow: <span class="fstat-no" title="function not covered" >function(qs, cb) {</span>
-<span class="cstat-no" title="statement not covered" >        return followDb(dbName, qs, cb);</span>
+      follow: <span class="fstat-no" title="function not covered">function(qs, cb) {</span>
+<span class="cstat-no" title="statement not covered">        return followDb(dbName, qs, cb);</span>
       },
       auth: auth,
       session: session,
@@ -2534,15 +2532,15 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
       viewWithList: viewWithList
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    docScope.view.compact = <span class="fstat-no" title="function not covered" >function(ddoc, cb) {</span></span>
-<span class="cstat-no" title="statement not covered" >      return compactDb(dbName, ddoc, cb);</span>
+<span class="cstat-no" title="statement not covered">    docScope.view.compact = <span class="fstat-no" title="function not covered">function(ddoc, cb) {</span></span>
+<span class="cstat-no" title="statement not covered">      return compactDb(dbName, ddoc, cb);</span>
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return docScope;</span>
+<span class="cstat-no" title="statement not covered">    return docScope;</span>
   }
 &nbsp;
   // server level exports
-<span class="cstat-no" title="statement not covered" >  serverScope = _.extend(serverScope, {</span>
+<span class="cstat-no" title="statement not covered">  serverScope = _.extend(serverScope, {</span>
     db: {
       create: createDb,
       get: getDb,
@@ -2568,9 +2566,9 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
     followUpdates: followUpdates
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var db = maybeExtractDatabaseComponent();</span>
+<span class="cstat-no" title="statement not covered">  var db = maybeExtractDatabaseComponent();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return db ? docModule(db) : serverScope;</span>
+<span class="cstat-no" title="statement not covered">  return db ? docModule(db) : serverScope;</span>
 };
 &nbsp;
 /*
@@ -2586,18 +2584,19 @@ module.exports = exports = nano = <span class="fstat-no" title="function not cov
 nano.version = require('../package.json').version;
 nano.path    = __dirname;
 &nbsp;
-<span class="fstat-no" title="function not covered" >function urlResolveFix(couchUrl, dbName) {</span>
-<span class="cstat-no" title="statement not covered" >  if (/[^\/]$/.test(couchUrl)) {</span>
-<span class="cstat-no" title="statement not covered" >    couchUrl += '/';</span>
+<span class="fstat-no" title="function not covered">function urlResolveFix(couchUrl, dbName) {</span>
+<span class="cstat-no" title="statement not covered">  if (/[^\/]$/.test(couchUrl)) {</span>
+<span class="cstat-no" title="statement not covered">    couchUrl += '/';</span>
   }
-<span class="cstat-no" title="statement not covered" >  return u.resolve(couchUrl, dbName);</span>
+<span class="cstat-no" title="statement not covered">  return u.resolve(couchUrl, dbName);</span>
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 16:15:32 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 21:59:07 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
