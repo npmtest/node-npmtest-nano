@@ -1,4 +1,7 @@
-# test coverage for  [nano (v6.2.0)](http://github.com/dscape/nano)  [![npm package](https://img.shields.io/npm/v/npmtest-nano.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-nano) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-nano.svg)](https://travis-ci.org/npmtest/node-npmtest-nano)
+# npmtest-nano
+
+#### basic test coverage for  [nano (v6.2.0)](http://github.com/dscape/nano)  [![npm package](https://img.shields.io/npm/v/npmtest-nano.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-nano) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-nano.svg)](https://travis-ci.org/npmtest/node-npmtest-nano)
+
 #### The official CouchDB client for Node.js
 
 [![NPM](https://nodei.co/npm/nano.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/nano)
@@ -115,7 +118,8 @@
         "test": "DEBUG=* NOCK_OFF=true istanbul cover tape tests/*/*/*.js",
         "unmocked": "NOCK_OFF=true tape tests/*/*/*.js"
     },
-    "version": "6.2.0"
+    "version": "6.2.0",
+    "bin": {}
 }
 ```
 
